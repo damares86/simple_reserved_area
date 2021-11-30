@@ -280,7 +280,8 @@ box-shadow: none;
 }
 
 img.logo{
-	height:80px;
+	height:80%;
+	margin:1%;
 }
 
 .nav-user>a {

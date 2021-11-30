@@ -110,8 +110,7 @@ if($type=="role"){
         </div>
        
     </div>
-<?php
-// DA SISTEMARE DA QUI IN POI
+<?php   
 
 }else if($type=="pass"){
     ?>

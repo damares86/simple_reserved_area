@@ -2,14 +2,24 @@
 
 require "inc/header.php";
 
+require '../phpDebug/src/Debug/Debug.php';   			// if not using composer
+
+ $debug = new \bdk\Debug(array(
+     'collect' => true,
+     'output' => true,
+ ));
 
 
 
 $manage=filter_input(INPUT_GET,"man");
 $operation=filter_input(INPUT_GET,"op");
 
+
 $usersCount=GetAllRows($conn,"accounts");
 $filesCount=GetAllRows($conn,"files");
+
+$user=$_SESSION['name'];
+
 
 ?>
 
@@ -54,7 +64,9 @@ $filesCount=GetAllRows($conn,"files");
                                 } else if($operation=="add"){
                                     require "inc/func/regFile.php";
                                 } 
-                            } else { 
+                            } else if($manage=="admin"){
+                                    require "inc/func/edAdmin.php";
+                            }else { 
                         ?>
                             <div class="module">
                                 <div class="module-head">
@@ -66,7 +78,12 @@ $filesCount=GetAllRows($conn,"files");
                                 require "inc/alert.php";
                                 ?>
                                     <section class="docs">
-                                        <p>Welcome <?$user?> to you Admin Dashboard Area.</p>
+                                        <p>Welcome <b><?=$user?></b> to you Admin Dashboard Area.</p>
+                                        <p>Below you have some quick links to manage the reserved area.</p><br>
+                                        <p>Here there are two buttons to change your username and password:<br><br>
+                                        <a href="index.php?man=admin&type=name" class="btn btn-primary">Change Username</a> 
+                                        <a href="index.php?man=admin&type=psw" class="btn btn-primary">Change Password</a>
+                                        </p>
                                     </section>
                                 </div>
                             </div>

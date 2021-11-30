@@ -8,9 +8,6 @@
                                     <a href="index.php"><i class="menu-icon icon-dashboard"></i>Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?man=users&op=show"><i class="menu-icon icon-user"></i>Profile</a>
-                                </li>
-                                <li>
                                     <a href="index.php?man=users&op=show"><i class="menu-icon icon-group"></i>Users</a>
                                 </li>
                                 <li>
