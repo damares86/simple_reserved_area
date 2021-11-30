@@ -5,17 +5,12 @@
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active">
-                                    <a href="index.php"><i class="menu-icon icon-dashboard"></i>Dashboard</a>
+                                    <a href="index.php"><i class="menu-icon icon-dashboard"></i>Profile</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?man=users&op=show"><i class="menu-icon icon-user"></i>Users</a>
+                                    <a href="index.php?man=users&op=show"><i class="menu-icon icon-user"></i>Files</a>
                                 </li>
-                                <li>
-                                    <a href="index.php?man=roles&op=show"><i class="menu-icon icon-key"></i>Roles</a>
-                                </li>
-                                <li>
-                                    <a href="index.php?man=files&op=show"><i class="menu-icon icon-briefcase"></i>Files</a>
-                                </li>
+                              
                             </ul>
                             <!--/.widget-nav-->
                             

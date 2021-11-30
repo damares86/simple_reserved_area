@@ -81,50 +81,34 @@ $operation=filter_input(INPUT_GET,"op");
                         ?>
                             <div class="module">
                                 <div class="module-head">
-                                    <h3>damares86 Admin Dashboard</h3>
+                                    <h3>User Dashboard</h3>
                                     
                                 </div>
                                 <div class="module-body">
-                                <?php
-                                require "inc/alert.php";
-                                ?>
-                                    <section class="docs">
-                                        <p>Benvenuto nella dashboard dell'area riservata del sito XStream.</p>
-                                    </section>
-                                </div>
-                            </div>
+                                    <p>Here you can find all your file, just click on the button to download them.</p>
+                                    <hr>
 
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <a href="index.php?man=users&op=show" class="btn-box big span6"><i class="icon-user"></i><b><?= $customersCount ?></b>
-                                        <p class="text-muted">
-                                            Clienti</p>
-                                    </a><a href="index.php?man=products&op=show" class="btn-box big span6"><i class=" icon-laptop"></i><b><?= $productsCount ?></b>
-                                        <p class="text-muted">
-                                            Prodotti</p>
-                                    </a>
+                                    <table class="table">
+                                        <thead>
+                                            <th>File Title</th>
+                                            <th>File Name</th>
+                                            <th>Download</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Title</td>
+                                                <td>Name</td>
+                                                <td>  
+                                                    <a href="#">
+                                                        <button type="button" class="btn btn-success btn-sm">Download</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
                                 </div>
-                                <div class="module">
-                                    <div class="module-head">
-                                        <h3>Collegamenti Veloci</h3>
-                                        
-                                    </div>
-                                </div>
-                                <div class="btn-box-row row-fluid">
-                                    <a href="index.php?man=users&op=add" class="btn-box small span3">
-                                        <i class="icon-plus"></i><b>Aggiungi Cliente</b>
-                                    </a>
-                                    <a href="index.php?man=users&op=show" class="btn-box small span3">
-                                        <i class="icon-group"></i><b>Modifica Cliente</b>
-                                    </a>
-                                    <a href="index.php?man=products&op=add" class="btn-box small span3">
-                                        <i class="icon-plus"></i><b>Aggiungi Prodotto</b>
-                                    </a>
-                                    <a href="index.php?man=products&op=show" class="btn-box small span3">
-                                        <i class="icon-laptop"></i><b>Modifica Prodotto</b>
-                                    </a>                                           
-                                </div>
-                                   
+                               
                             </div>
                             <!--/.module-->
                             <?php 
