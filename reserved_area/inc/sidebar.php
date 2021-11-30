@@ -5,10 +5,10 @@
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
                                 <li class="active">
-                                    <a href="index.php"><i class="menu-icon icon-dashboard"></i>Profile</a>
+                                    <a href="index.php?man=user&op=show"><i class="menu-icon icon-user"></i>Profile</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?man=users&op=show"><i class="menu-icon icon-user"></i>Files</a>
+                                    <a href="index.php?man=file"><i class="menu-icon icon-folder-open"></i>Files</a>
                                 </li>
                               
                             </ul>

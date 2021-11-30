@@ -14,7 +14,7 @@
                        
                         <ul class="nav pull-right">
                             <li>
-                                <a href="../core/logout.php">
+                                <a href="core/logout.php">
                                 Logout
                                 </a>
                                                                

@@ -8,8 +8,8 @@ require "inc/header.php";
 $manage=filter_input(INPUT_GET,"man");
 $operation=filter_input(INPUT_GET,"op");
 
-// $customersCount=GetAllRows($conn,"accounts");
-// $productsCount=GetAllRows($conn,"products");
+$usersCount=GetAllRows($conn,"accounts");
+$filesCount=GetAllRows($conn,"files");
 
 ?>
 
@@ -66,39 +66,39 @@ $operation=filter_input(INPUT_GET,"op");
                                 require "inc/alert.php";
                                 ?>
                                     <section class="docs">
-                                        <p>Benvenuto nella dashboard dell'area riservata del sito XStream.</p>
+                                        <p>Welcome <?$user?> to you Admin Dashboard Area.</p>
                                     </section>
                                 </div>
                             </div>
 
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="index.php?man=users&op=show" class="btn-box big span6"><i class="icon-user"></i><b><?= $customersCount ?></b>
+                                    <a href="index.php?man=users&op=show" class="btn-box big span6"><i class="icon-user"></i><b><?= $usersCount ?></b>
                                         <p class="text-muted">
-                                            Clienti</p>
-                                    </a><a href="index.php?man=products&op=show" class="btn-box big span6"><i class=" icon-laptop"></i><b><?= $productsCount ?></b>
+                                            Users</p>
+                                    </a><a href="index.php?man=products&op=show" class="btn-box big span6"><i class=" icon-laptop"></i><b><?= $filesCount ?></b>
                                         <p class="text-muted">
-                                            Prodotti</p>
+                                           Files</p>
                                     </a>
                                 </div>
                                 <div class="module">
                                     <div class="module-head">
-                                        <h3>Collegamenti Veloci</h3>
+                                        <h3>Quick links</h3>
                                         
                                     </div>
                                 </div>
                                 <div class="btn-box-row row-fluid">
                                     <a href="index.php?man=users&op=add" class="btn-box small span3">
-                                        <i class="icon-plus"></i><b>Aggiungi Cliente</b>
+                                        <i class="icon-plus"></i><b>Add User</b>
                                     </a>
                                     <a href="index.php?man=users&op=show" class="btn-box small span3">
-                                        <i class="icon-group"></i><b>Modifica Cliente</b>
+                                        <i class="icon-group"></i><b>Manage Users</b>
                                     </a>
-                                    <a href="index.php?man=products&op=add" class="btn-box small span3">
-                                        <i class="icon-plus"></i><b>Aggiungi Prodotto</b>
+                                    <a href="index.php?man=roles&op=show" class="btn-box small span3">
+                                        <i class="icon-key"></i><b>Manage Roles</b>
                                     </a>
-                                    <a href="index.php?man=products&op=show" class="btn-box small span3">
-                                        <i class="icon-laptop"></i><b>Modifica Prodotto</b>
+                                    <a href="index.php?man=files&op=show" class="btn-box small span3">
+                                        <i class="icon-folder-open"></i><b>Manage Files</b>
                                     </a>                                           
                                 </div>
                                    

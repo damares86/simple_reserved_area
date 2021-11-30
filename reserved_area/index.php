@@ -26,13 +26,8 @@
 require "inc/header.php";
 
 
-
-
 $manage=filter_input(INPUT_GET,"man");
 $operation=filter_input(INPUT_GET,"op");
-
-// $customersCount=GetAllRows($conn,"accounts");
-// $productsCount=GetAllRows($conn,"products");
 
 ?>
 
@@ -54,65 +49,23 @@ $operation=filter_input(INPUT_GET,"op");
                         <div class="content">
                         <?php
                             
+                            $userID=$_SESSION['id'];
 
-                            if($manage=="users"){
-                                if($operation=="show"){
-                                    require "inc/func/allUser.php";
-                                } else if($operation=="add"){
-                                    require "inc/func/regUser.php";
-                                } else if($operation=="edit"){
-                                    require "inc/func/edUser.php";
-                                }
-                            } else if($manage=="roles"){
-                                if($operation=="show"){
-                                    require "inc/func/allRole.php";
-                                } else if($operation=="add"){
-                                    require "inc/func/regRole.php";
-                                } else if($operation=="edit"){
-                                    require "inc/func/regRole.php";
-                                }
-                            } else if($manage=="files"){
-                                if($operation=="show"){
-                                    require "inc/func/allFile.php";
-                                } else if($operation=="add"){
-                                    require "inc/func/regFile.php";
+                            $userData=GetDataById($conn, "accounts", $userID);
+                            $roleID=$userData["role_id"];
+                            $role=GetDataById($conn, "roles", $roleID);
+                            $rolename=$role['rolename'];
+
+                            if($manage=="file"){
+                                    require "inc/file.php";
+                            } else if($manage=="edit"){
+                                    require "inc/edProfile.php";
+                            } else {
+                                
+                                    require "inc/profile.php";
+                                
                                 } 
-                            } else { 
-                        ?>
-                            <div class="module">
-                                <div class="module-head">
-                                    <h3>User Dashboard</h3>
-                                    
-                                </div>
-                                <div class="module-body">
-                                    <p>Here you can find all your file, just click on the button to download them.</p>
-                                    <hr>
-
-                                    <table class="table">
-                                        <thead>
-                                            <th>File Title</th>
-                                            <th>File Name</th>
-                                            <th>Download</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Title</td>
-                                                <td>Name</td>
-                                                <td>  
-                                                    <a href="#">
-                                                        <button type="button" class="btn btn-success btn-sm">Download</button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                               
-                            </div>
-                            <!--/.module-->
-                            <?php 
-                            }
+                            
                             ?>
                         </div>
                         <!--/.content-->

@@ -158,3 +158,18 @@ function GetAllRows($conn, $table)
 
     return $rowcount;
 }
+
+function GetAllUserFileRows($conn, $table,$roleID)
+{
+    $sqlString = "SELECT * FROM $table where role_id=$roleID";
+    $sql = $conn->prepare($sqlString);
+    $sql->execute();
+    $result = $sql->get_result();
+    showQueryResult($result, $conn->error);
+
+    if ($result) {
+        $rowcount=mysqli_num_rows($result);
+    }
+
+    return $rowcount;
+}
