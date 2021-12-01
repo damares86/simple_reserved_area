@@ -25,6 +25,7 @@ With your browser, go to the main folder of the reserved area, you will see a lo
 The default admin user is:
 
 > user: **admin**
+> 
 > password: **admin**
 
 Once you are in you can change your username and password (please, do it!).
