@@ -2,13 +2,6 @@
 
 require "inc/header.php";
 
-require '../phpDebug/src/Debug/Debug.php';   			// if not using composer
-
- $debug = new \bdk\Debug(array(
-     'collect' => true,
-     'output' => true,
- ));
-
 
 
 $manage=filter_input(INPUT_GET,"man");

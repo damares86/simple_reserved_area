@@ -1,11 +1,5 @@
 <?php
 
-require 'phpDebug/src/Debug/Debug.php';   			// if not using composer
-
- $debug = new \bdk\Debug(array(
-     'collect' => true,
-     'output' => true,
- ));
  
 if (!isset($_SESSION['loggedin'])) {
     header('Location: ../index.php');
@@ -30,5 +24,14 @@ if (!isset($_SESSION['loggedin'])) {
         <link type="text/css" href="assets/images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
+
+<!--            
+    ###################################################################
+    #                                                                 #
+    #   Reserved Area by damares86 (https://github.com/damares86/)    #
+    #                                                                 #
+    ###################################################################
+-->
+
     </head>
   

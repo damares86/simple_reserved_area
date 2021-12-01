@@ -3,13 +3,6 @@
 require "../../core/functions.php";
 $conn=OpenConnection();
 
-require '../phpDebug/src/Debug/Debug.php';   			// if not using composer
-
- $debug = new \bdk\Debug(array(
-     'collect' => true,
-     'output' => true,
- ));
-
 
 if(filter_input(INPUT_GET,"idToDel")){
 

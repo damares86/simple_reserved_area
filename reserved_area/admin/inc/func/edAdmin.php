@@ -22,7 +22,7 @@ $passwordToMod=$userAdmin["password"];
     <div class="module-body">
 
     <div class="col-md-8 m-auto">
-    <form action="core/mngUser.php" method="POST" enctype="multipart/form-data">
+    <form action="core/mngAdmin.php" method="POST" enctype="multipart/form-data">
 
 <?php
 if($type=="name"){
@@ -30,7 +30,7 @@ if($type=="name"){
 
    
 
-    <form class="form-horizontal row-fluid" action="core/mngAdmin.php" method="POST" enctype="multipart/form-data">
+    <!-- <form class="form-horizontal row-fluid" action="core/mngAdmin.php" method="POST" enctype="multipart/form-data"> -->
         
         <input type="hidden" name="operation" value="modUser" />
 

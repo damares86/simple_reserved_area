@@ -1,11 +1,13 @@
 <?php
 
-require '../phpDebug/src/Debug/Debug.php';   			// if not using composer
+/*
+    ###################################################################
+    #                                                                 #
+    #   Reserved Area by damares86 (https://github.com/damares86/)    #
+    #                                                                 #
+    ###################################################################
+*/
 
- $debug = new \bdk\Debug(array(
-     'collect' => true,
-     'output' => true,
- ));
 /////////////////////////////////////////////////////////////
 
 // create the db tables if not exists
