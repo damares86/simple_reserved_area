@@ -1,5 +1,9 @@
 <?php
 
+// fare una IF che controlla se db.php esiste, nel caso non esista richiama il form per inserire i dati
+// quel form poi rimanda a configdb.php, che se non esiste lo crea, valorizza le variabili
+// poi bisogna fare la require del file db.php per assegnare le variabili alla function connection
+
 require "reserved_area/core/functions.php";
 $conn = OpenConnection();
 
@@ -67,7 +71,7 @@ if (isset($_SESSION['loggedin'])) {
 						</div>
 					</div>
 					<div class="footer">
-						Created by &copy; <a href="http://www.davidemasera.it">davidemasera</a>
+						Created by &copy; <a href="https://github.com/damares86">damares86</a>
 					</div>
 				</div>
 			</div>

@@ -8,9 +8,15 @@
     ###################################################################
 */
 
+if(!is_file('db.php')){
+    require "configdb.php";
+} else{
+    require "db.php";
+}
 
 function OpenConnection()
 {
+    
     $charset = 'utf8';
     $conn = new mysqli("YOUR_SERVER_HOST(ES.LOCALHOST", "USER", "PASSWORD", "DB_NAME");
 

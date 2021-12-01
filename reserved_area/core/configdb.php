@@ -10,17 +10,25 @@
 
 //MANCA LA PARTE DI INVIO NELL'INDEX PRINCIPALE
 
-if(!is_file('db.php')){
+if(!is_file('reserved_area/core/db.php')){
   $dbname=filter_input(INPUT_POST,"dbname");
   $username=filter_input(INPUT_POST,"username");
   $password=filter_input(INPUT_POST,"password");
   $server=filter_input(INPUT_POST,"server");
 
-  $file_handle = fopen('db.php', 'w');
+  $file_handle = fopen('reserved_area/core/db.php', 'w');
   fwrite($file_handle, '<?php');
-  fwrite($file_handle, '<?php');
-  fwrite($file_handle, '<?php');
-
+  fwrite($file_handle, "\n");
+  fwrite($file_handle, '$dbname="'.$dbname.'";');
+  fwrite($file_handle, "\n");
+  fwrite($file_handle, '$username="'.$username.'";');
+  fwrite($file_handle, "\n");
+  fwrite($file_handle, '$password="'.$password.'";');
+  fwrite($file_handle, "\n");
+  fwrite($file_handle, '$server="'.$server.'";');
+  fwrite($file_handle, "\n");
+  fwrite($file_handle, '?>');
+  
 }
 
 
