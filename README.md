@@ -32,4 +32,6 @@ Once you are in you can change your username and password (please, do it!).
 
 You have to create the roles you want (e.g Editor, Viewer,etc), create the users and assign them specific roles and upload files (.pdf, .doc, .docx, .zip) assigning them role's permission.
 
-Enjoy your reserved area and if you need help or if you find some problems, contact me and I'll fix that.
+If you find some problems, open an issue and I'll fix that.
+
+**Enjoy your reserved area!**
