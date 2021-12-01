@@ -8,6 +8,22 @@
     ###################################################################
 */
 
+//MANCA LA PARTE DI INVIO NELL'INDEX PRINCIPALE
+
+if(!is_file('db.php')){
+  $dbname=filter_input(INPUT_POST,"dbname");
+  $username=filter_input(INPUT_POST,"username");
+  $password=filter_input(INPUT_POST,"password");
+  $server=filter_input(INPUT_POST,"server");
+
+  $file_handle = fopen('db.php', 'w');
+  fwrite($file_handle, '<?php');
+  fwrite($file_handle, '<?php');
+  fwrite($file_handle, '<?php');
+
+}
+
+
 /////////////////////////////////////////////////////////////
 
 // create the db tables if not exists
