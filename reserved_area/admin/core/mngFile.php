@@ -4,19 +4,24 @@ require "../../core/functions.php";
 $conn=OpenConnection();
 
 if(filter_input(INPUT_GET,"idToDel")){
-
-	$idToDel = filter_input(INPUT_GET, "idToDel");
-	$usernameToDel=GetDataById($conn, "files",$idToDel);
-
-
-    if (DeleteRecord($conn,"files",$idToDel)){		
-        header("Location: ../index.php?msg=delSucc&obj=file");
-        exit;
 	
-    } else {
-        header("Location: ../index.php?msg=delErr&obj=file");
-        exit;
-    }
+	$idToDel = filter_input(INPUT_GET, "idToDel");
+	$fileToDel=GetDataById($conn, "files",$idToDel);
+	$filenameToDel=$fileToDel['filename'];
+	$filepath='../../file/'.$filenameToDel;
+	
+	if(unlink($filepath)){
+		if (DeleteRecord($conn,"files",$idToDel)){		
+			header("Location: ../index.php?msg=delSucc&obj=file");
+			exit;
+		
+		} else {
+			header("Location: ../index.php?msg=delErr&obj=file");
+			exit;
+		}
+	} else {
+		header("Location: ../index.php?msg=delErr&obj=file1");
+	}
 
 
 } else if(filter_input(INPUT_POST,"subReg")){

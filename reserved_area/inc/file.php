@@ -31,7 +31,7 @@ $query = "SELECT * FROM files WHERE role_id=$roleID";
                                                 <td><?=$row['title']?></td>
                                                 <td><?=$row['filename']?></td>
                                                 <td>  
-                                                    <a href="#">
+                                                    <a href="file/download.php?idFile=<?=$row['id']?>">
                                                         <button type="button" class="btn btn-success btn-sm">Download</button>
                                                     </a>
                                                 </td>

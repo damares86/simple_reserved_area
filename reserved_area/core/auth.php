@@ -6,12 +6,7 @@ require "functions.php";
 
 $con=OpenConnection();
 
-require '../phpDebug/src/Debug/Debug.php';   			// if not using composer
 
-$debug = new \bdk\Debug(array(
-	'collect' => true,
-	'output' => true,
-));
 
 
 

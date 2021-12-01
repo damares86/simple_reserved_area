@@ -86,7 +86,7 @@ $user=$_SESSION['name'];
                                     <a href="index.php?man=users&op=show" class="btn-box big span6"><i class="icon-user"></i><b><?= $usersCount ?></b>
                                         <p class="text-muted">
                                             Users</p>
-                                    </a><a href="index.php?man=products&op=show" class="btn-box big span6"><i class=" icon-laptop"></i><b><?= $filesCount ?></b>
+                                    </a><a href="index.php?man=files&op=show" class="btn-box big span6"><i class=" icon-folder-open"></i><b><?= $filesCount ?></b>
                                         <p class="text-muted">
                                            Files</p>
                                     </a>
