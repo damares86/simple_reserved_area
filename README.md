@@ -7,12 +7,14 @@ It is possbile to:
 
 ## Easy quick start
 
-To setup your reserved area you need to donwload the package as zip or clone the repository.
-It is necessary that you have an empty database and a user with a password.
+To setup your reserved area you need to download the package as zip or clone the repository.
+
+It is necessary that you have an **empty database** and a **user** with a **password**.
 
 ### Basic database configuration
 
 Open the file `functions.php` in the folder `reserved_area/core`.
+
 You will find this at line 15, change the definition with your db's data.
 ```php
     $conn = new mysqli("YOUR_SERVER_HOST(ES.LOCALHOST", "USER", "PASSWORD", "DB_NAME");
@@ -22,6 +24,7 @@ Ok, everything is done! Too easy?
 ## Usage
 
 With your browser, go to the main folder of the reserved area, you will see a login form.
+
 The default admin user is:
 
 > user: **admin**
