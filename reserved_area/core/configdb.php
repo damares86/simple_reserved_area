@@ -8,14 +8,19 @@
     ###################################################################
 */
 
-//MANCA LA PARTE DI INVIO NELL'INDEX PRINCIPALE
+require '../../phpDebug/src/Debug/Debug.php';   			// if not using composer
+
+	$debug = new \bdk\Debug(array(
+		'collect' => true,
+		'output' => true,
+	));
+
 
 if(!is_file('reserved_area/core/db.php')){
   $dbname=filter_input(INPUT_POST,"dbname");
   $username=filter_input(INPUT_POST,"username");
   $password=filter_input(INPUT_POST,"password");
-  $server=filter_input(INPUT_POST,"server");
-
+  $host=filter_input(INPUT_POST,"host");
   $file_handle = fopen('reserved_area/core/db.php', 'w');
   fwrite($file_handle, '<?php');
   fwrite($file_handle, "\n");
@@ -25,12 +30,15 @@ if(!is_file('reserved_area/core/db.php')){
   fwrite($file_handle, "\n");
   fwrite($file_handle, '$password="'.$password.'";');
   fwrite($file_handle, "\n");
-  fwrite($file_handle, '$server="'.$server.'";');
+  fwrite($file_handle, '$server="'.$host.'";');
   fwrite($file_handle, "\n");
   fwrite($file_handle, '?>');
   
 }
 
+require "functions.php";
+
+$conn=OpenConnection();
 
 /////////////////////////////////////////////////////////////
 

@@ -4,32 +4,6 @@
 // quel form poi rimanda a configdb.php, che se non esiste lo crea, valorizza le variabili
 // poi bisogna fare la require del file db.php per assegnare le variabili alla function connection
 
-require 'phpDebug/src/Debug/Debug.php';   			// if not using composer
-
-	$debug = new \bdk\Debug(array(
-		'collect' => true,
-		'output' => true,
-	));
-
-if(!is_file('db.php')){
-	require "reserved_area/inc/dbdata.php";
-} else {
-
-
-require "reserved_area/core/functions.php";
-$conn = OpenConnection();
-
-require "reserved_area/core/configdb.php";
-
-
-session_start();
-if (isset($_SESSION['loggedin'])) {
-    header('Location: reserved_area/index.php');
-    exit;
-}
-
- 
-
 ?>
 
 <!DOCTYPE html>
@@ -54,10 +28,20 @@ if (isset($_SESSION['loggedin'])) {
 					<div class="card fat">
 						<div class="card-body">
 							
-							<h4 class="card-title">Login</h4>
-							<form method="POST" class="my-login-validation" novalidate="" action="reserved_area/core/auth.php">
+							<h4 class="card-title">Insert your database data</h4>
+							<form method="POST" class="my-login-validation" novalidate="" action="reserved_area/core/configdb.php">
 								<div class="form-group">
-									<label for="username">Username</label>
+									<label for="host">Server host (es. localhost)</label>
+									<input id="host" class="form-control" name="host" value="" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="dbname">Database name</label>
+									<input id="dbname" class="form-control" name="dbname" value="" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="username">Database user</label>
 									<input id="username" class="form-control" name="username" value="" required autofocus>
 								</div>
 
@@ -77,7 +61,7 @@ if (isset($_SESSION['loggedin'])) {
 
 								<div class="form-group m-0">
 									<button type="submit" class="btn btn-primary btn-block">
-										Login
+										Submit
 									</button>
 								</div>
 							</form>
@@ -98,6 +82,3 @@ if (isset($_SESSION['loggedin'])) {
 	<script src="js/my-login.js"></script>
 </body>
 </html>
-<?php
-								}
-							?>

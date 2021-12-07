@@ -8,14 +8,18 @@
     ###################################################################
 */
 
-if(!is_file('db.php')){
-    require "configdb.php";
-} else{
-    require "db.php";
-}
+
+
+
 
 function OpenConnection()
 {
+    if(!is_file('db.php')){
+        header("Location: ../../index.php");
+    } else{
+        require "db.php";
+    }
+        
     
     $charset = 'utf8';
     $conn = new mysqli($server, $username, $password, $dbname);
