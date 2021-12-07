@@ -18,7 +18,7 @@ function OpenConnection()
 {
     
     $charset = 'utf8';
-    $conn = new mysqli("YOUR_SERVER_HOST(ES.LOCALHOST", "USER", "PASSWORD", "DB_NAME");
+    $conn = new mysqli($server, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die("Errore di connessione al MySQL " . $conn->connect_error);

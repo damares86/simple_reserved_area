@@ -1,6 +1,6 @@
 <?php
-$dbname="";
-$username="";
-$password="";
-$server="";
+$dbname="localhost";
+$username="root";
+$password="Salomon-86";
+$server="dmresarea";
 ?>
