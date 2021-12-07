@@ -11,7 +11,7 @@ require 'phpDebug/src/Debug/Debug.php';   			// if not using composer
 		'output' => true,
 	));
 
-if(!is_file('db.php')){
+if(!is_file('reserved_area/core/db.php')){
 	require "reserved_area/inc/dbdata.php";
 } else {
 

@@ -16,12 +16,12 @@ require '../../phpDebug/src/Debug/Debug.php';   			// if not using composer
 	));
 
 
-if(!is_file('reserved_area/core/db.php')){
+if(!is_file('db.php')){
   $dbname=filter_input(INPUT_POST,"dbname");
   $username=filter_input(INPUT_POST,"username");
   $password=filter_input(INPUT_POST,"password");
   $host=filter_input(INPUT_POST,"host");
-  $file_handle = fopen('reserved_area/core/db.php', 'w');
+  $file_handle = fopen('db.php', 'w');
   fwrite($file_handle, '<?php');
   fwrite($file_handle, "\n");
   fwrite($file_handle, '$dbname="'.$dbname.'";');
@@ -35,7 +35,6 @@ if(!is_file('reserved_area/core/db.php')){
   fwrite($file_handle, '?>');
   
 }
-
 require "functions.php";
 
 $conn=OpenConnection();
@@ -88,6 +87,5 @@ $conn->query("CREATE TABLE IF NOT EXISTS files
 $conn->query("CREATE TABLE IF NOT EXISTS roles
                            ( id INT ( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                              rolename VARCHAR(255) NOT NULL)");
-
 
 ?>
