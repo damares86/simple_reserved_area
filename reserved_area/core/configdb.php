@@ -8,13 +8,6 @@
     ###################################################################
 */
 
-require '../../phpDebug/src/Debug/Debug.php';   			// if not using composer
-
-	$debug = new \bdk\Debug(array(
-		'collect' => true,
-		'output' => true,
-	));
-
 
 if(!is_file('db.php')){
   $dbname=filter_input(INPUT_POST,"dbname");
@@ -54,13 +47,13 @@ $conn->query("CREATE TABLE IF NOT EXISTS admin
 
 $conn->query("INSERT INTO admin
                             (id, username, password)
-                            VALUES ('1','admin', '$2y$10$.Kn6pGSF.Ik5y/o..4Rsg.07qD4fjbz2E21FRWiwnrdvIFZZBBvpi')
+                            VALUES ('1','admin', '$2y$10$/EoJNAFqj1MgZRZOs4iG3OY22LXjUJsFXdPCQGhjUClVRXNup0Vbm')
                             
                             ");
 
 $conn->query("INSERT INTO admin
                         (id, username, password)
-                        SELECT * FROM (SELECT '1','admin', '$2y$10$.Kn6pGSF.Ik5y/o..4Rsg.07qD4fjbz2E21FRWiwnrdvIFZZBBvpi') AS tmp
+                        SELECT * FROM (SELECT '1','admin', '$2y$10$/EoJNAFqj1MgZRZOs4iG3OY22LXjUJsFXdPCQGhjUClVRXNup0Vbm') AS tmp
                         WHERE NOT EXISTS (
                             SELECT username FROM admin WHERE username = 'admin'
                         ) LIMIT 1");
@@ -87,5 +80,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS files
 $conn->query("CREATE TABLE IF NOT EXISTS roles
                            ( id INT ( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                              rolename VARCHAR(255) NOT NULL)");
+
+header("Location: ../index.php");
 
 ?>

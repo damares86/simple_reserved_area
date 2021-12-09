@@ -1,34 +1,22 @@
 <?php
 
-// fare una IF che controlla se db.php esiste, nel caso non esista richiama il form per inserire i dati
-// quel form poi rimanda a configdb.php, che se non esiste lo crea, valorizza le variabili
-// poi bisogna fare la require del file db.php per assegnare le variabili alla function connection
-
-require 'phpDebug/src/Debug/Debug.php';   			// if not using composer
-
-	$debug = new \bdk\Debug(array(
-		'collect' => true,
-		'output' => true,
-	));
 
 if(!is_file('reserved_area/core/db.php')){
 	require "reserved_area/inc/dbdata.php";
-} else {
 
+}
 
 require "reserved_area/core/functions.php";
 $conn = OpenConnection();
 
-require "reserved_area/core/configdb.php";
-
-
 session_start();
+
+
 if (isset($_SESSION['loggedin'])) {
     header('Location: reserved_area/index.php');
     exit;
 }
 
- 
 
 ?>
 
@@ -99,5 +87,5 @@ if (isset($_SESSION['loggedin'])) {
 </body>
 </html>
 <?php
-								}
-							?>
+								// }
+							?> 
