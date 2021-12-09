@@ -14,13 +14,13 @@ It is necessary that you have an **empty database** and a **user** with a **pass
 
 ### Basic database configuration
 
-Open the file `functions.php` in the folder `reserved_area/core`.
+With your browser, go to the main folder of the reserved area.
 
-You will find this at line 15, change the definition with your db's data.
-```php
-    $conn = new mysqli("YOUR_SERVER_HOST(ES.LOCALHOST", "USER", "PASSWORD", "DB_NAME");
-```
-Ok, everything is done! Too easy?
+If it's the first time, you will have a simple form to insert the db data (*server*, *database name*, *database user*, *user password*).
+
+When you have finished, click on "Submit" and the script will create the db tables and the default **admin** user.
+
+Ok, everything is done! **Too easy?**
 
 ## Usage
 
