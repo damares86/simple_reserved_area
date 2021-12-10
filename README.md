@@ -10,13 +10,13 @@ It is possbile to:
 
 To setup your reserved area you need to download the package as zip or clone the repository.
 
-It is necessary that you have an **empty database** and a **user** with a **password**.
+It is necessary that you have an **empty database** with a **user** and a **password**.
 
 ### Basic database configuration
 
 With your browser, go to the main folder of the reserved area.
 
-If it's the first time, you will have a simple form to insert the db data (*server*, *database name*, *database user*, *user password*).
+If it's the first time, you will see a simple form that let you insert the db data (*server*, *database name*, *database user*, *user password*).
 
 When you have finished, click on "Submit" and the script will create the db tables and the default **admin** user.
 
@@ -32,7 +32,7 @@ The default admin user is:
 > 
 > password: **admin**
 
-Once you are in you can change your username and password (please, do it!).
+Once you are in you can change your username and password (**please, do it!**).
 
 You have to create the roles you want (e.g Editor, Viewer,etc), create the users and assign them specific roles and upload files (.pdf, .doc, .docx, .zip) assigning them role's permission.
 
