@@ -2,8 +2,8 @@
 An easy to use reserved area, that allow you to set roles for user and set permission to get file for specific roles.
 
 It is possbile to:
-* create user and assign them roles
 * create roles
+* create user and assign them roles
 * upload files and assign the permission to download them to a specific user's role
 
 ## Easy quick start
