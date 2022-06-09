@@ -1,27 +1,32 @@
 <?php
 
+require '../../phpDebug/src/Debug/Debug.php';   			// if not using composer
+
+$debug = new \bdk\Debug(array(
+    'collect' => true,
+    'output' => true,
+));
+
 require "../../core/functions.php";
 $conn=OpenConnection();
 
-
 if(filter_input(INPUT_GET,"idToDel")){
-
+	
 	$idToDel = filter_input(INPUT_GET, "idToDel");
 	$usernameToDel=GetDataById($conn, "accounts",$idToDel);
 
-
-    if (DeleteRecord($conn,"accounts",$idToDel)){		
-        header("Location: ../index.php?msg=delSucc&obj=user");
-        exit;
 	
+    if (DeleteRecord($conn,"accounts",$idToDel)){		
+		header("Location: ../index.php?msg=delSucc&obj=user");
+        exit;
+		
     } else {
-        header("Location: ../index.php?msg=delErr&obj=user");
+		header("Location: ../index.php?msg=delErr&obj=user");
         exit;
     }
-
-
-} else if(filter_input(INPUT_POST,"subReg")){
 	
+	
+} else if(filter_input(INPUT_POST,"subReg")){
 	$operation=filter_input(INPUT_POST,"operation");
 	
 	$roleArr=$_POST['rolename'];
@@ -30,7 +35,8 @@ if(filter_input(INPUT_GET,"idToDel")){
 	if($operation=="modUser"){
 		
 		$userIdToMod=$_POST["idToMod"];
-	
+
+		
 			if ($stmt = $conn->prepare('UPDATE accounts SET username=?, email=?, role_id=? WHERE id=?')) {
 			
 			$stmt->bind_param('ssii', $_POST['username'],$_POST['email'],$roleID,$userIdToMod);
@@ -70,10 +76,15 @@ if(filter_input(INPUT_GET,"idToDel")){
 
 	} else if($operation=="add"){
 
+				
+
+
 		// Make sure the submitted registration values are not empty.
 	if (empty($_POST['username']) || empty($_POST['email']) ) {
 		// One or more values are empty.
 		// exit('Please complete the registration form');
+		print_r("empty");
+		exit;
 		header("Location: ../index.php?msg=emptyUser");
 		exit;
 	}
@@ -87,17 +98,23 @@ if(filter_input(INPUT_GET,"idToDel")){
 	
 	if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
 		// exit('Username is not valid!');
+		print_r("username err");
+		exit;
 		header("Location: ../index.php?msg=usernameErr");
 		exit;
 	}
 
 		if(empty($_POST['password'])){
+			print_r("empty password");
+			exit;
 			header("Location: ../../index.php?msg=emptyPass");
 			exit;
 		}
 
 		if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
 			// exit('Password must be between 5 and 20 characters long!');
+			print_r("password corta");
+			exit;
 			header("Location: ../../index.php?msg=passErr");
 			exit;
 		}

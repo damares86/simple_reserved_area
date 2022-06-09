@@ -73,13 +73,13 @@ if($type=="role"){
                 foreach($roles as $row){
                     $checked="";
                     if($roleToMod==$row["id"]){
-                    $checked="checked";
+                        $checked='checked="checked"';
 
                     }
                 ?>      
 
                 <label class="radio">
-                    <input type="radio" name="rolename[]" value="<?=$row["id"]?>" checked="">
+                    <input type="radio" name="rolename[]" value="<?=$row["id"]?>" <?=$checked?>>
                     <?=$row["rolename"]?>
                 </label> 
 
